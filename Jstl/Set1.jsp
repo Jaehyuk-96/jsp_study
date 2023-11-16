@@ -12,13 +12,13 @@ Core
 <c:set var="directVar" value="100"/>
 <c:set var="elVar" value="${directVar mod 5}"/>
 <c:set var="expVar" value="<% new Date()%>"/>
-<c:set var="beweenVar">변수값 요렇게 설정</c:set>
+<c:set var="betweenVar">변수값 요렇게 설정</c:set>
 
 <%--변수 출력--%>
 <h4>EL을 이용해 변수 출력</h4>
 <ul>
     <li>directVar : ${ pageScope.directVar }</li>
-    <li>elVar : ${ elvar }</li>
+    <li>elVar : ${ elVar }</li>
     <li>expVar : ${ expVar }</li>
     <li>betweenVar : ${ betweenVar }</li>
 </ul>
@@ -35,7 +35,11 @@ scope="request"/>
 <h4>자바빈즈 생성 2 - target, property 사용</h4>
 <c:set var="personVar2" value="<%= new Person()%>" scope = "request" />
 <c:set target="${personVar2}" property = "name" value="정약용" />
-<c:set target="${personVar2}" property = "name" value="정약용" />
+<c:set target="${personVar2}" property = "age" value="60" />
+<ul>
+    <li>이름 :${ personVar2.name }</li>
+    <li>나이 :${ requestScope.personVar2.age}</li>
+</ul>
 
 
 </body>
